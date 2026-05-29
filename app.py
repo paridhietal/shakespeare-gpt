@@ -50,7 +50,7 @@ class TransformerBlock(nn.Module):
         self.ff = nn.Sequential(
             nn.Linear(d_model, 4 * d_model),
             nn.ReLU(),
-            nn.Dropout(dropout),
+            nn.Dropout(0.1),
             nn.Linear(4 * d_model, d_model)
         )
         self.norm1 = nn.LayerNorm(d_model)
